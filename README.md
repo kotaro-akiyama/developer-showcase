@@ -1,10 +1,10 @@
 # Developer Showcase
 
 <div align="center">
-  <h1 style="font-size:3.1rem;margin-bottom:0;">Developer Showcase</h1>
+  <h1 style="font-size:3.1rem;margin-bottom:0;">Disruptive Innovation and Creation</h1>
   <p style="font-size:1.2rem;font-weight:500;">
-    Product-minded full-stack engineer crafting reliable, human-centered digital experiences.<br/>
-    価値あるデジタル体験を構想・実装し、継続的に磨き上げるソフトウェアエンジニア。
+    Future-focused DevOps engineer driving innovation through transformative solutions.<br/>
+    未来志向のDevOpsエンジニアとして、変革的なソリューションでイノベーションを推進。
   </p>
   <p>
     <a href="#signature-capabilities--強み">Capabilities</a> ·
@@ -13,10 +13,10 @@
     <a href="#contact--コンタクト">Contact</a>
   </p>
   <a href="mailto:atukuwassyoi8726@gmail.com">
-    <img alt="Email" src="https://img.shields.io/badge/Email-hello%40example.com-181717?style=for-the-badge">
+    <img alt="Email" src="https://img.shields.io/badge/Email-atukuwassyoi8726%40gmail.com-181717?style=for-the-badge">
   </a>
   <a href="https://github.com/your-handle">
-    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-@your--handle-000000?style=for-the-badge&logo=github">
+    <img alt="GitHub" src="https://img.shields.io/badge/GitHub-@kotaro--akiyama-000000?style=for-the-badge&logo=github">
   </a>
   <a href="https://linkedin.com/in/your-handle">
     <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin">
