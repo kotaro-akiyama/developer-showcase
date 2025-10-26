@@ -12,7 +12,7 @@
     <a href="#operating-principles--開発スタンス">Principles</a> ·
     <a href="#contact--コンタクト">Contact</a>
   </p>
-  <a href="mailto:your.name@example.com">
+  <a href="mailto:atukuwassyoi8726@gmail.com">
     <img alt="Email" src="https://img.shields.io/badge/Email-hello%40example.com-181717?style=for-the-badge">
   </a>
   <a href="https://github.com/your-handle">
@@ -121,10 +121,9 @@ Add certifications, recognitions, or speaking engagements to spotlight credibili
 - Sharing learnings via technical deep-dives and bilingual documentation.
 
 ## Contact / コンタクト
-- `Email:` your.name@example.com  
-- `GitHub:` [@your-handle](https://github.com/your-handle)  
+- `Email:` atukuwassyoi8726@gmail.com  
+- `GitHub:` [@kotaro-akiyama](https://github.com/kotaro-akiyama)  
 - `LinkedIn:` [linkedin.com/in/your-handle](https://linkedin.com/in/your-handle)  
-- `Portfolio:` [your-site.dev](https://your-site.dev)
 
 Feel free to reach out in English or Japanese. グローバルなコラボレーションを歓迎しています。
 
