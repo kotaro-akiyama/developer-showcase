@@ -32,7 +32,7 @@ resource "aws_codebuild_project" "static_site" {
 
   source {
     type            = "CODEPIPELINE"
-    buildspec       = "buildspec.yml"
+    buildspec       = "infra/terraform/pipeline/buildspec.yml"
     git_clone_depth = 1
   }
 

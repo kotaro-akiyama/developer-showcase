@@ -10,3 +10,4 @@
 - 2025-11-02: `infra/terraform/pipeline/` に GitHub 連携のデプロイパイプラインスタックを追加。S3/CloudFront/OAC、CodeBuild、CodePipeline、IAM ロールとポリシー、buildspec サンプルを作成。
 - 2025-11-02: ベースライン設定を `infra/terraform/common/` に集約し、役割が分かる命名へ整理。パイプラインスタックを同一パス配下へ移動。
 - 2025-11-02: パイプラインスタックを可変レイヤー（ルート）と不可変レイヤー（`modules/static_site_pipeline`）に分割し、再利用しやすい構成に再編。
+- 2025-11-03: 要件定義の更新に合わせ、静的サイトと Terraform パイプライン構成を `infra/terraform/pipeline/` へ集約。

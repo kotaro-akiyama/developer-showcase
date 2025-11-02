@@ -6,16 +6,16 @@ env:
 phases:
   install:
     commands:
-      - echo "[install] 追加の依存関係はここで取得します（必要なければ削除可）"
+      - echo "[install] 追加の依存関係があればここで取得します"
   pre_build:
     commands:
-      - echo "[pre_build] 静的サイトのビルドを準備します"
+      - echo "[pre_build] 静的サイトのコピー先ディレクトリを作成します"
       - rm -rf dist
       - mkdir -p dist
   build:
     commands:
-      - echo "[build] 静的ファイルを dist/ へ生成するスクリプトを記述してください"
-      - echo "<html><body><h1>Build artifact placeholder</h1></body></html>" > dist/index.html
+      - echo "[build] app ディレクトリから静的ファイルを dist/ へ複製します"
+      - cp -R app/. dist/
   post_build:
     commands:
       - echo "[post_build] dist/ を S3 に同期します"

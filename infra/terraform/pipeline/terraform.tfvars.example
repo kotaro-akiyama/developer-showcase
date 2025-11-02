@@ -21,4 +21,4 @@ cloudfront_price_class    = "PriceClass_All"
 cloudfront_waf_acl_arn    = ""
 
 # （同一 tfvars を共用する場合の）Budgets 通知メール設定
-# notification_emails = ["alerts@example.com"]
+# notification_emails = ["atukuwassyoi8726@gmail.com"]

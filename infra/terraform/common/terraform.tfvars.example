@@ -9,6 +9,5 @@ budget_limit        = 100
 time_unit           = "MONTHLY"
 currency            = "USD"
 notification_emails = [
-  "alerts@example.com",
-  # "ops@example.com",
+  "atukuwassyoi8726@gmail.com",
 ]
