@@ -1,0 +1,29 @@
+version: 0.2
+
+env:
+  shell: bash
+
+phases:
+  install:
+    commands:
+      - echo "[install] 追加の依存関係はここで取得します（必要なければ削除可）"
+  pre_build:
+    commands:
+      - echo "[pre_build] 静的サイトのビルドを準備します"
+      - rm -rf dist
+      - mkdir -p dist
+  build:
+    commands:
+      - echo "[build] 静的ファイルを dist/ へ生成するスクリプトを記述してください"
+      - echo "<html><body><h1>Build artifact placeholder</h1></body></html>" > dist/index.html
+  post_build:
+    commands:
+      - echo "[post_build] dist/ を S3 に同期します"
+      - aws s3 sync dist/ "s3://${SITE_BUCKET_NAME}" --delete
+      - echo "[post_build] CloudFront のキャッシュを無効化します"
+      - aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" --paths "/*"
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: dist

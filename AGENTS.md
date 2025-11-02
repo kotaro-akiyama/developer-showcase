@@ -1,27 +1,40 @@
-# Repository Guidelines
+# リポジトリ運用ガイドライン
 
-## Project Structure & Module Organization
-`app/` hosts the web experience (Next.js + TypeScript). Group domain features by route, maintain shared UI in `app/components`, and place reusable hooks under `app/lib`. Infrastructure code lives under `infra/`: `terraform/` for cloud resources, `ansible/` for configuration management, and `scripts/` for developer automation. Keep `README.md` as the high-level narrative and update it whenever directories gain new capabilities.
+> **注記:** この文書は基本的に日本語で閲覧・更新してください。
+> Codex エージェントの出力も日本語表記を維持してください。
+> 簡単なファイル作成や追記は、承認なしで自動対応して構いません。
+> 既存リソースの削除や大きなディレクトリ移動など重大な変更を行う前には、必ず事前に確認を取ってください。
 
-## Build, Test, and Development Commands
-Use Node 20+ with npm. Core commands:
-- `npm install` — sync dependencies before working on the app.
-- `npm run dev` — start the Next.js dev server with hot reload.
-- `npm run build` — generate the production bundle for deployment previews.
-- `npm run lint` — apply ESLint/Prettier; required before commits.
-- `npm run test` — execute Jest/Playwright suites locally.
-Infrastructure:
-- `terraform fmt && terraform validate` inside `infra/terraform/`.
-- `./infra/scripts/bootstrap.sh` — add automation here; keep scripts executable and idempotent.
+## プロジェクト構成とモジュール整理
+- `app/` — Next.js App Router のエントリポイント。`layout.tsx` で共通レイアウトを設定し、`globals.css` にグローバルスタイルを定義する。
+- `app/components/` — プレゼンテーショナルおよびインタラクティブなブロック群。画面単位でまとめ、機能を跨いだ不要な import は避ける。
+- `app/lib/` — 型付き設定 (`site-config.ts`) やデータヘルパーを配置する場所。コンポーネントからは副作用を排除する。
+- `infra/` — 運用コードの足場。IaC は `terraform/`、構成管理は `ansible/`、自動化は `scripts/` に配置し、変更点は `infra/README.md` に記録する。
 
-## Coding Style & Naming Conventions
-Write TypeScript, use 2-space indentation, and prefer functional React components. Keep folders and files in kebab-case; components, hooks, and context objects use PascalCase/camelCase. Co-locate styles and tests with their modules. Run ESLint with the Next.js preset and format via Prettier—hook both into your editor or pre-commit workflow.
+## ビルド・テスト・開発コマンド
+- Node 20 以上を使用し、Next.js 標準スクリプトを `package.json` に定義する。
+- `npm install` — ワークスペースの依存関係をインストールする。
+- `npm run dev` — Next.js の開発サーバーをホットリロード付きで `http://localhost:3000` に起動する。
+- `npm run lint` — ESLint + Prettier を実行する。コミット前に必ず走らせる。
+- `npm run build` — 本番環境向けのバンドルを作成する。
+- `npm run test` — Jest スイートを実行する（テストが整備され次第）。
+- インフラ変更時は `infra/terraform` で `terraform fmt && terraform validate` をコミット前に実行する。
 
-## Testing Guidelines
-Favor unit tests with Jest (store alongside code as `*.test.ts[x]`) and end-to-end flows with Playwright under `tests/e2e`. Mirror route names in test filenames for traceability. Every behavioral change must add or update tests; defer only with a tracked `// @todo-test` and follow-up issue. Target >90% coverage on critical UI flows and run accessibility projects (`npm run test:e2e -- --project=a11y`) before merging.
+## コーディングスタイルと命名規則
+- TypeScript は strict mode、インデントは 2 スペース、React は関数コンポーネントをデフォルトとする。
+- ファイル／フォルダー名はケバブケース、公開シンボルは PascalCase もしくは camelCase とする。
+- スタイル・テスト・フィクスチャは対象コンポーネントと同じ場所に置き、`npm run lint` で整形を徹底する。
 
-## Commit & Pull Request Guidelines
-Adopt conventional commits (`feat:`, `fix:`, `docs:`, `infra:`) with concise English summaries; add Japanese context in the body when it aids reviewers. Reference issues via `Closes #123`. Before opening a PR, confirm lint/build/test succeed, attach screenshots for UI changes, and document infra impacts (plans, migrations). Keep PRs focused (<500 LOC) and include a short changelog entry when work ships to production.
+## テストガイドライン
+- コンポーネントのスペックは実装の隣に `ComponentName.test.tsx` 形式で配置する。
+- E2E フローは `tests/e2e/` にルート構成を鏡写しにして追加する（例: `tests/e2e/home.spec.ts`）。
+- 新しい挙動はテストで担保するか、先送りする場合は `// @todo-test <issue-link>` コメントを残し、共通ライブラリや重要なユーザージャーニーはカバレッジ 85% 以上を目標とする。
 
-## Infrastructure Notes
-Treat `infra/terraform` as the source of truth. Run `terraform plan` for every infra PR and paste the diff into the discussion. Store secrets outside the repo via environment managers or CI secrets. Document new resources and operational runbooks in `infra/README.md`.
+## コミットおよび Pull Request ガイドライン
+- コミットメッセージは Conventional Commit (`feat:`, `fix:`, `chore:`, `infra:`) を採用し、サブジェクトは 72 文字以内に収める。
+- PR では意図を説明し、`Closes #123` の形式で課題を紐付け、UI/インフラ変更にはスクリーンショットやターミナル出力を添付する。
+- レビュー依頼前に `npm run lint`、`npm run build`、関連テストをローカルで検証し、PR のスコープを集中させる。
+
+## セキュリティと設定のヒント
+- `.env*` をコミットしない。シークレットはデプロイ基盤やシークレットマネージャーで配布する。
+- `infra/terraform` をソースオブトゥルースとして扱い、リモートステートを使用し、`terraform plan` の差分を PR で共有する。
