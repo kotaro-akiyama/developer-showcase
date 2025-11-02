@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ナチュラルバランス | 健康食品でつくる毎日の習慣</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1>ナチュラルバランス</h1>
+        <p>体がよろこぶ、やさしい栄養を毎日の食卓に。</p>
+        <a class="hero__cta" href="#products">商品を見る</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <div class="section__inner section__grid">
+          <div>
+            <h2>自然の力で整えるライフスタイル</h2>
+            <p>
+              ナチュラルバランスは、旬の素材から抽出した栄養素をバランスよく配合した健康食品ブランドです。化学添加物を使わず、毎日の食事に取り入れやすい形でお届けします。
+            </p>
+          </div>
+          <ul class="benefits">
+            <li>100% 植物由来原料</li>
+            <li>グルテン・白砂糖・保存料 不使用</li>
+            <li>管理栄養士監修のブレンド</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="products" class="section section--alt">
+        <div class="section__inner">
+          <h2>人気商品</h2>
+          <div class="product-grid" id="product-grid"></div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="section">
+        <div class="section__inner">
+          <h2>お客様の声</h2>
+          <div class="testimonials" id="testimonials"></div>
+        </div>
+      </section>
+
+      <section id="subscribe" class="section section--cta">
+        <div class="section__inner section__stack">
+          <h2>健康習慣を始めませんか？</h2>
+          <p>季節のおすすめや限定ブレンドをメールでお届けします。</p>
+          <form id="subscribe-form" class="subscribe-form">
+            <input
+              type="email"
+              name="email"
+              placeholder="メールアドレス"
+              aria-label="メールアドレス"
+              required
+            />
+            <button type="submit">登録する</button>
+          </form>
+          <p id="subscribe-message" class="subscribe-message" role="status"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p>&copy; <span id="year"></span> ナチュラルバランス</p>
+        <nav>
+          <a href="#about">ブランドについて</a>
+          <a href="#products">商品</a>
+          <a href="#subscribe">お問い合わせ</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>
