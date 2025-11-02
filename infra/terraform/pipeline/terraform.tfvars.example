@@ -1,0 +1,24 @@
+# このファイルを terraform.tfvars（または環境別の命名）としてコピーし、環境に合わせて値を調整してください。
+
+# AWS アカウント情報
+aws_region      = "ap-northeast-1"
+aws_account_id  = "123456789012"
+
+# パイプラインで利用する S3 バケット
+site_bucket_name     = "developer-showcase-static-site"
+artifact_bucket_name = "developer-showcase-artifacts"
+
+# CodePipeline の GitHub リポジトリ設定
+github_owner  = "your-github-account"
+github_repo   = "developer-showcase"
+github_branch = "main"
+
+# GitHub 連携用 AWS CodeStar Connections
+connection_arn = "arn:aws:codestar-connections:ap-northeast-1:123456789012:connection/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+
+# CloudFront 設定
+cloudfront_price_class    = "PriceClass_All"
+cloudfront_waf_acl_arn    = ""
+
+# （同一 tfvars を共用する場合の）Budgets 通知メール設定
+# notification_emails = ["alerts@example.com"]
