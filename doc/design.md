@@ -34,7 +34,7 @@
   - `cloudfront_price_class`, `cloudfront_waf_acl_arn`
 
 ## 5. 監視とアラート
-- **AWS Budgets**: Amazon EventBridge の月次コストおよび予測値が USD 100 を超過した場合、`atukuwassyoi8726@gmail.com` にメール通知。
+- **AWS Budgets**: Amazon EventBridge の月次コストおよび予測値が USD 100 を超過した場合、`notification_emails` に設定したアドレスへメール通知。
 - **CloudWatch Logs**: CodeBuild のログを 30 日保持し、失敗時のトラブルシュートに利用。
 
 ## 6. 運用手順概要
@@ -54,8 +54,10 @@
 4. **運用強化**: ログ監視や通知先の追加、CloudFront/WAF 設定のチューニング、将来の複数環境運用に向けた backend 分離を段階的に検討する。
 
 ## 9. 入力が必要なユニーク AWS 情報
-- `XXXXXXXXXXXX` — Terraform で対象とする AWS アカウント ID。`infra/terraform/pipeline/terraform.tfvars` に入力。
-- `store_bucket` / `artifact_store_bucket` / `cloudfront_logs_store_bucket` — S3 バケット名はアカウント内で一意である必要がある。`store_bucket` と `artifact_store_bucket` は tfvars、`cloudfront_logs_store_bucket` はモジュール内部で派生するが、命名規則を満たすか確認。
+- `aws_account_id` — Terraform で対象とする AWS アカウント ID。`infra/terraform/pipeline/terraform.tfvars` に入力。
+- `site_bucket_name` / `artifact_bucket_name` / `cloudfront_logs_bucket_name` — S3 バケット名はアカウント内で一意である必要がある。`site_bucket_name` と `artifact_bucket_name` は tfvars で設定し、`cloudfront_logs_bucket_name` はモジュール内部で派生するため命名規則を確認。
 - `connection_arn` — GitHub 連携に使用する CodeStar Connections の ARN。事前に AWS マネジメントコンソールで発行し、`infra/terraform/pipeline/terraform.tfvars` に設定。
 - `cloudfront_waf_acl_arn`（任意） — 連携する AWS WAFv2 Web ACL の ARN を指定する場合に入力。未使用なら空文字列。
 - `aws_profile`（任意） — ローカル環境から Terraform を実行する際、特定の AWS CLI プロファイルを使う場合は `infra/terraform/common/terraform.tfvars` に設定。
+
+> **NOTE**: 実際のメールアドレスや AWS アカウント ID などの機微情報は `.gitignore` 対象の `terraform.tfvars` にのみ記載し、GitHub にはコミットしない。`.example` ファイルにはプレースホルダーを残す。

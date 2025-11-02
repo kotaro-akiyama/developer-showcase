@@ -28,8 +28,7 @@
 
 ## 6. 制約
 - 実行環境は AWS を利用し、リージョンは `ap-northeast-1` を優先する。
-- コスト管理の通知先メールアドレスは `notification_emails` 変数で管理し、最低 1 件以上を設定する。
-- 通知先のメールアドレスは `atukuwassyoi8726@gmail`にする。
+- コスト管理の通知先メールアドレスは `notification_emails` 変数で管理し、最低 1 件以上を設定する（実際のアドレスは GitHub にコミットしない）。
 - GitHub との連携は AWS CodeStar Connections を利用する。
 
 ## 7. 成果物
