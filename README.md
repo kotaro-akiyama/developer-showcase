@@ -126,7 +126,7 @@ Curated highlights that blend product thinking with technical depth. 実装力�
 ## Journey / 歩み
 | Year / 年 | Milestone / 出来事 | Notes / 補足 |
 | --- | --- | --- |
-| 2024–Present | Current role / 現職 | 某大手コンサル株式会社。某大手銀行の市場開発基盤構築、某大手銀行の金利動向予測ツールリプレイス等をPMとして担当。AWS環境・GitHub Actions・Terraform・ECSを組み合わせたDevOpsプラットフォームを設計・構築。 |
+| 2024–Present | Current role / 現職 | 某大手コンサル株式会社。某大手銀行の市場開発基盤構築をPMとして担当。AWS環境・GitHub Actions・Terraform・ECSを組み合わせたDevOpsプラットフォームを設計・構築。 |
 | 2012–2023 | Previous role / 前職 | 某大手人材開発会社 AWS/Azureクラウド案件のPMとして某事業会社向けクラウド移行やHD改善プロジェクトのプロダクトオーナーを歴任。ブロックチェーン・カーボンニュートラル教育、某キャリア会社向けにElasticSearchによる分析基盤構築を実施。 |
 | 2010–2012 | Formative years / 初期キャリア | 某大手運搬開発株式会社 運用保守に従事し、業務システムの基盤整備と運用改善を経験。エンジニアとしての基礎を確立。 |
 
