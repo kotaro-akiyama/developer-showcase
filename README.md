@@ -98,7 +98,7 @@ Curated highlights that blend product thinking with technical depth. 実装力�
 
 ### 🌱 AWS/Azure PM driving cloud excellence / AWS・Azure領域でクラウド品質を牽引
 **プロジェクト内容**  
-某大手事業会社にて、AWS/Azure 案件のプロジェクトマネージャーとして活動。DNP 本社向けのクラウド案件引き合いやインフラ領域のプロジェクト推進を担当。
+某大手事業会社にて、AWS/Azure 案件のプロジェクトマネージャーとして活動。本社向けのクラウド案件引き合いやインフラ領域のプロジェクト推進を担当。
 
 **担当業務**  
 - クラウド案件の PM、および PM チームの取りまとめ  
