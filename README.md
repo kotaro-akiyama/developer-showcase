@@ -140,7 +140,7 @@ Curated highlights that blend product thinking with technical depth. 実装力�
 ## Contact / コンタクト
 - `Email:` atukuwassyoi8726@gmail.com  
 - `GitHub:` [@kotaro-akiyama](https://github.com/kotaro-akiyama)  
-- `LinkedIn:` [linkedin.com/in/TBD](https://linkedin.com/in/TBD)  
+- `LinkedIn:` [linkedin.com/TBD](https://linkedin.com/TBD)  
 
 Feel free to reach out in English or Japanese. グローバルなコラボレーションを歓迎しています。
 
